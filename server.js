@@ -2,6 +2,7 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.SET || 1841;
 var app = express();
 hbs.registerPartials(__dirname + '/views/partials');
 hbs.registerHelper('getCurrentYear',() => {
@@ -52,6 +53,6 @@ app.get('/bad',(req,res) => {
 
 
 
-app.listen(1841,() => {
-  console.log('Server is up !');
+app.listen(port,() => {
+  console.log(`Server is up on ${port} !`);
 });
